@@ -1,21 +1,20 @@
 const express = require('express');
 const abc = require('../introduction/intro')
-const welcome =require('../introduction/logger/logger.js')
-const dateMon=require('')
-const stringEdit= require('')
 const router = express.Router();
+const first = require('../logger/logger')
+const secound = require('../util/helper')
+
+
 
 router.get('/test-me', function (req, res) {
     console.log('My batch is', abc.name)
     abc.printName()
+    first.welcome()   // welcome function ko call ker raha hu
+    secound.printDate() 
     res.send('My second ever api!')
-    welcome.funWelcome()
-    dateMon.funDateMonth()
-    dateMon.funBatchinfo()
-    stringEdit.trim()
-    stringEdit.changetoLowerCase()
-    stringEdit.changetoUpperCase()
 });
+
+
 
 
 router.get('/test-you', function(req, res){
@@ -26,4 +25,4 @@ router.get('/give-me-students-data',function(req, res){
 
 })
 module.exports = router;
-// adding this comment for no reason
+// adding this comment for no reasoni
